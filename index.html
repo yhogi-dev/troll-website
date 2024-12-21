@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Autoplay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('image.jpg') no-repeat center center/cover; /* Replace with your image file URL */
+        }
+        h1, p {
+            display: none; /* Hide text content */
+        }
+    </style>
+    <script>
+        function playSoundAndClose() {
+            const audio = new Audio('michael-jackson-hee-hee.mp3'); // Replace with your sound file URL
+
+            // Play the audio file
+            audio.play();
+
+            // Once the sound finishes, close the window
+            audio.addEventListener('ended', () => {
+                window.open('', '_self').close(); // Close the tab
+            });
+        }
+
+        // Open the website in a separate window and play sound on load
+        window.onload = () => {
+            playSoundAndClose();
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
